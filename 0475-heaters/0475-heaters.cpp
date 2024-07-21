@@ -4,18 +4,21 @@ class Solution {
          int i=0, j=0; 
          int n = houses.size() ;
          int m  = heaters.size() ;
-        while(i<n){
-            if(j == m){ 
-                return false;//coz we have no heater left to cover rest of the houses, so this cant be answer
+        while(i<n)
+        {
+            if(j == m)
+            { 
+                return false;
             }
-            
-            int l = heaters[j] - radius; //get the left range
-            int r = heaters[j] + radius; //get the right range
-            if(houses[i] < l or houses[i] > r){
-                j++; //if current house is not in the range, check with next heater
+            int l = heaters[j] - radius;
+            int r = heaters[j] + radius;
+            if(houses[i] < l or houses[i] > r)
+            {
+                j++;
             }
-            else{
-                i++; //if current heater can cover the current house then check for the next house
+            else
+            {
+                i++;
             }
         }
         return true; 
